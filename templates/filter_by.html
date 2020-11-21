@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Фильтр</title>
+  <style>
+   div {
+       display:flex;
+       justify-content:center;
+       margin:10px;
+   }
+    .form-row {
+      display: flex;
+      justify-content: flex-end;
+      padding: .5em;
+   }
+   .form-row > input {
+       flex: 2;
+       padding: .5em;
+   }
+   .form-row > label {
+        padding: .5em 1em .5em 0;
+        flex: 1;
+    }
+  </style>
+ </head>
+<body>
+<div class="center">
+    <p><b>Фильтрация товаров</b></p>
+</div>
+<div class="center">
+    <p>{{ mycontent }}</p>
+</div>
+<div class="center">
+    <div style="width: 300px;">
+    <form action="/find_par" method="POST">
+        <li class="form-row">
+            <label for="find_par1">Внутренняя память(Гб)</label>
+            <input type="text" name="find_par1">
+        </li>
+        <li class="form-row">
+            <label for="find_par2">Оперативная память(Гб)</label>
+            <input type="text" name="find_par2">
+        </li>
+        <li class="form-row">
+            <label for="find_par3">Цвет</label>
+            <input type="text" name="find_par3">
+        </li>
+        <div class="center">
+            <input type="submit" value="Применить фильтр">
+        </div>
+    </form>
+    </div>
+</div>
+
+<div class="center">
+    <div style="width: 300px;">
+        <form action="/find_name" method="POST">
+        <li class="form-row">
+            <label for="find_name">Фильтр товаров по названию</label>
+            <input type="text" name="find_name">
+
+        </li>
+        <div class="center">
+            <input type="submit" value="Применить фильтр по названию">
+        </div>
+        </form>
+    </form>
+    </div>
+</div>
+<div class="center">
+    <input type="button" onclick="history.back();" value="Назад"/>
+</div>
+</body>
+</html>

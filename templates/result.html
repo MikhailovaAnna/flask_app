@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Результат поиска</title>
+  <style>
+   div {
+       display:flex;
+       justify-content:space-around;
+   }
+  </style>
+ </head>
+<body>
+<div class="center">
+    <p>{{ mycontent }}</p>
+</div>
+<div>
+    <table border="1px" border-collapse="collapse" width="50%">
+        {% if items %}
+        <caption>Результаты поиска</caption>
+           <tr>
+            <th>id</th>
+            <th>Название</th>
+            <th>Описание</th>
+            <th>Память(Гб)</th>
+            <th>ОЗУ(Гб)</th>
+            <th>Цвет</th>
+           </tr>
+        {% endif %}
+        {% for item in items %}
+            <tr><td>{{item.id}}</td><td>{{item.name}}</td><td>{{item.desc}}</td>
+            {% for p in item.par %}
+                <td>{{p}}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+<div class="center">
+    <p><input type="button" onclick="history.back();" value="Назад"/>
+    <a href="/"><button type="submit">Главная</button></a></p>
+</div>
+</body>
+</html>
+
+
+

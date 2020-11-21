@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Добавление</title>
+  <style>
+   div {
+       display:flex;
+       justify-content:space-around;
+   }
+   .form-row {
+      display: flex;
+      justify-content: flex-end;
+      padding: .5em;
+   }
+   .form-row > input {
+       flex: 2;
+       padding: .5em;
+   }
+   .form-row > label {
+        padding: .5em 1em .5em 0;
+        flex: 1;
+    }
+  </style>
+ </head>
+<body>
+
+<div class="center">
+    <p><b>Добавление нового товара</b></p>
+</div>
+<div class="center">
+    <p>{{ mycontent }}</p>
+</div>
+<div class="center">
+    <form action="/new" method="POST">
+        <li class="form-row">
+            <label for="id">Id товара</label>
+            <input type="text" name="id">
+        </li>
+        <li class="form-row">
+            <label for="name">Название товара</label>
+            <input type="text" name="name">
+        </li>
+        <li class="form-row">
+            <label for="desc">Описание товара</label>
+            <input type="text" name="desc">
+        </li>
+        <div class="center">
+            <p><b>Параметры.</b><br/>
+            Количество памяти указывается в целых числах(Гб).</p>
+        </div>
+        <li class="form-row">
+            <label for="memory">Внутренняя память(Гб)</label>
+            <input type="text" name="memory">
+        </li>
+        <li class="form-row">
+            <label for="ram">Оперативная память(Гб)</label>
+            <input type="text" name="ram">
+        </li>
+        <li class="form-row">
+            <label for="color">Цвет</label>
+            <input type="text" name="color">
+        </li>
+        <div class="center">
+            <p><input type="submit" value="Добавить товар">
+            </p>
+        </div>
+    </form>
+</div>
+<div class="center">
+    <p><a href="/table"><button type="submit">Показать таблицу товаров</button></a>
+    <a href="/"><button type="submit">Главная</button></a></p>
+</div>
+</body>
+</html>
